@@ -1,0 +1,50 @@
+$navColor: #06c1ae;
+// 创建三角形
+@mixin arrow($w: 10px, $c: #000, $dir: top) {
+	// 兼容行内元素和块元素
+	width: 0;
+	font-size: 0;
+	// 所有边变成透明
+	border: $w solid transparent;
+	// 特殊边上色
+	border-#{$dir}-color: $c;
+}
+@mixin clearfix() {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+%items {
+		background: #fff;
+		li {
+			margin: 0 10px;
+			padding: 10px 0;
+			border-bottom: 1px solid #ccc;
+			display: flex;
+		}
+		img {
+			width: 100px;
+			height: 60.6px;
+		}
+		.content {
+			margin-left: 10px;
+			flex: 1;
+		}
+		h3 {
+			height: 45px;
+			line-height: 20px;
+			font-size: 14px;
+		}
+		p {
+			font-size: 12px;
+		}
+		.price {
+			color: $navColor;
+			margin-right: 6px;
+		}
+		.sales {
+			float: right;
+		}
+}
